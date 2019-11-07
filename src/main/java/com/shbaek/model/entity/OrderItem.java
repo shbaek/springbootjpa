@@ -7,8 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="ORDER_ITEM")
-@Getter
-@Setter
+@Getter @Setter
 public class OrderItem {
 
     @Id
@@ -16,11 +15,13 @@ public class OrderItem {
     @Column(name="ORDER_ITEM_ID")
     private Long id;
 
-    @Column(name="ITEM_ID")
-    private Long itemId;
+    @ManyToOne
+    @JoinColumn(name="ITEM_ID")
+    private Item item;
 
-    @Column(name="ORDER_ID")
-    private Long orderId;
+    @ManyToOne
+    @JoinColumn(name="ORDER_ID")
+    private Order order;
 
     private int orderPrice;
     private int count;

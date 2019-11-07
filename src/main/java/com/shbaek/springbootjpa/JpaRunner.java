@@ -25,5 +25,8 @@ public class JpaRunner implements ApplicationRunner {
         item.setStockQuantity(10);
 
         em.persist(item);
+
+
+
     }
 }
